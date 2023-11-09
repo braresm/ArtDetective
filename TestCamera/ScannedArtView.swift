@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct ScannedArtView: View {
+    var image: UIImage
     var body: some View {
-        VStack {
-            Text("Details about the scanned art.")
+        VStack(alignment: .leading, spacing: 20) {
+            Image(uiImage: image) // Load your finished image
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            Text("Mona Lisa")
                 .font(.title)
-                .padding()
-            // Add more UI components here for the details screen
+                .fontWeight(.bold)
+            Text("Artist: Leonardo da Vinci")
+                .font(.title3)
+            Text("Year: 1503-1506")
+                .font(.title3)
+            Text("Brush: sfumato")
+                .font(.title3)
+            Text("Material: oil on a poplar wood")
+                .font(.title3)
+            // Add more details as needed here
         }
-        .navigationBarTitle("Scanned Art", displayMode: .inline)
+        .padding()
     }
+    /*.navigationTitle(artwork.title)
+    .navigationBarTitleDisplayMode(.inline)
+    }*/
 }

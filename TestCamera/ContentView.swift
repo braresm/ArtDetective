@@ -5,8 +5,6 @@
 //  Created by Balutoiu Rares on 04/11/2023.
 //
 import Foundation
-// ContentView.swift
-
 import SwiftUI
 
 struct ContentView: View {
@@ -25,22 +23,34 @@ struct ContentView: View {
                         .frame(width: 250, height: 250)
                     Text("Captured Image")
                         .font(.headline)
-                    
-                    Button(action: {
-                        // Set to true to navigate to the ScannedArtView
-                        self.showScannedArtView = true
-                    }){
-                        Text("X")
-                            .font(.headline)
-                            .foregroundColor(.red)
-                    }
-                    .padding()
-                    .background(Color.black.opacity(0.7))
-                    .clipShape(Circle())
-                    .padding()
-                    
+                    HStack {
+                            Button(action: {
+                                // Set to true to navigate to the ScannedArtView
+                                self.showScannedArtView = true
+                            }){
+                                Text("Scan image")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(8)
+
+                            Button(action: {
+                                // This will clear the captured image and bring the user back to the main view
+                                self.capturedImage = nil
+                            }){
+                                Text("Back")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                            .background(Color.red)
+                            .cornerRadius(8)
+                        }
+                        .padding()
                     // Invisible NavigationLink activated by the state variable
-                    NavigationLink(destination: ScannedArtView(), isActive: $showScannedArtView) { EmptyView() }
+                    NavigationLink(destination: ScannedArtView(image: capturedImage!), isActive: $showScannedArtView) { EmptyView() }
                 } else {
                     // Main view when no image is captured
                     HStack {
