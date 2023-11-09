@@ -11,6 +11,8 @@ struct ContentView: View {
     @State private var isCameraPresented = false
     @State private var capturedImage: UIImage?
     @State private var showScannedArtView = false
+    @State private var showExtraFeatureView = false
+
 
     var body: some View {
         NavigationView {
@@ -25,9 +27,9 @@ struct ContentView: View {
                         .font(.headline)
                     HStack {
                             Button(action: {
-                                // Set to true to navigate to the ScannedArtView
-                                self.showScannedArtView = true
-                            }){
+                                // Set to true to navigate to the ExtraFeatureView
+                                self.showExtraFeatureView = true
+                            }) {
                                 Text("Scan image")
                                     .font(.headline)
                                     .foregroundColor(.white)
@@ -35,7 +37,9 @@ struct ContentView: View {
                             .padding()
                             .background(Color.blue)
                             .cornerRadius(8)
+                        NavigationLink(destination: ExtraFeatureView(), isActive: $showExtraFeatureView) { EmptyView() }
 
+                        
                             Button(action: {
                                 // This will clear the captured image and bring the user back to the main view
                                 self.capturedImage = nil
@@ -64,7 +68,7 @@ struct ContentView: View {
                             .frame(width: 70, height: 70)
                     }
                     
-                    Spacer(minLength: 10)
+                    Spacer(minLength: 2)
                     
                     Button(action: {
                         // Trigger camera view presentation
@@ -102,7 +106,7 @@ struct ContentView: View {
                     .padding(10)
                     
                     
-                    NavigationLink(destination: ExtraFeatureView()) {
+                    /*NavigationLink(destination: ExtraFeatureView()) {
                         VStack {
                             Text("Paint")
                                 .foregroundColor(.black)
@@ -114,7 +118,7 @@ struct ContentView: View {
                                 .frame(width: 250, height: 100)
                         }
                     }
-                    .padding(10)
+                    .padding(10)*/
                 }
             }
         }
