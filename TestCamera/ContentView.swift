@@ -19,7 +19,7 @@ struct ContentView: View {
             VStack {
                 // If an image is captured, show it with a button to navigate to more details
                 if let image = capturedImage {
-                    /*Image(uiImage: image)
+                    Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
                         .frame(width: 250, height: 250)
@@ -54,59 +54,58 @@ struct ContentView: View {
                         }
                         .padding()
                     // Invisible NavigationLink activated by the state variable
-                    NavigationLink(destination: ScannedArtView(image: capturedImage!), isActive: $showScannedArtView) { EmptyView() }*/
+                    NavigationLink(destination: ScannedArtView(image: capturedImage!), isActive: $showScannedArtView) { EmptyView() }
                 } else {
-                    VStack{
-                        // Main view when no image is captured
-                        HStack {
-                            Text("ArtDetective")
-                                .font(.system(size: 48))
+                    // Main view when no image is captured
+                    HStack {
+                        Text("ArtDetective")
+                            .font(.system(size: 48))
+                            .fontWeight(.bold)
+                        
+                        Image("logo-no-background") // Replace with your actual logo image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 70, height: 70)
+                    }
+                    
+                    Spacer(minLength: 2)
+                    
+                    Button(action: {
+                        // Trigger camera view presentation
+                        self.isCameraPresented = true
+                    }) {
+                        VStack {
+                            Text("Scan")
+                                .foregroundColor(.black)
+                                .font(.largeTitle)
                                 .fontWeight(.bold)
-                            
-                            Image("logo-no-background") // Replace with your actual logo image
+                            Image("scan") // Replace with your actual scan button image
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 70, height: 70)
+                                .frame(width: 250, height: 100)
                         }
-                        
-                        //Spacer(minLength: 2)
-                        
-                        Button(action: {
-                            // Trigger camera view presentation
-                            self.isCameraPresented = true
-                        }) {
-                            VStack {
-                                Text("Scan")
-                                    .foregroundColor(.black)
-                                    .font(.largeTitle)
-                                    .fontWeight(.bold)
-                                Image("scan") // Replace with your actual scan button image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 250, height: 100)
-                            }
-                        }
-                        .padding(10)
-                        .fullScreenCover(isPresented: $isCameraPresented) {
-                            ScanArtView(isPresented: $isCameraPresented, capturedImage: $capturedImage)
-                        }
-                        
-                        // Rest of your buttons for Search and Extra features
-                        NavigationLink(destination: SearchView()) {
-                            VStack {
-                                Text("Search")
-                                    .foregroundColor(.black)
-                                    .font(.largeTitle)
-                                    .fontWeight(.bold)
-                                Image("search-icon") // Replace with your actual search icon image
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 250, height: 100)
-                            }
-                        }
-                        .padding(10)
-                        
                     }
+                    .padding(10)
+                    .fullScreenCover(isPresented: $isCameraPresented) {
+                        ScanArtView(isPresented: $isCameraPresented, capturedImage: $capturedImage)
+                    }
+                    
+                    // Rest of your buttons for Search and Extra features
+                    NavigationLink(destination: SearchView()) {
+                        VStack {
+                            Text("Search")
+                                .foregroundColor(.black)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                            Image("search-icon") // Replace with your actual search icon image
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 250, height: 100)
+                        }
+                    }
+                    .padding(10)
+                    
+                    
                     /*NavigationLink(destination: ExtraFeatureView()) {
                         VStack {
                             Text("Paint")

@@ -47,7 +47,7 @@
 		DE0C0E7A2AFC36B4006514A8 /* ScannedArtView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannedArtView.swift; sourceTree = "<group>"; };
 		DE32CADB2AF6E68A0062594B /* TestCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE32CADE2AF6E68A0062594B /* TestCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCameraApp.swift; sourceTree = "<group>"; };
-		DE32CAE02AF6E68A0062594B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
+		DE32CAE02AF6E68A0062594B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE32CAE22AF6E68A0062594B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE32CAE52AF6E68B0062594B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE32CAEB2AF6E68B0062594B /* TestCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
