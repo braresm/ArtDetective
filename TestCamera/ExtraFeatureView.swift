@@ -25,7 +25,7 @@ struct ExtraFeatureView: View {
                                 let sensitivity: CGFloat = 10.0
 
                                 if magnitude > sensitivity {
-                                    increaseOpacity(by: 0.003)
+                                    increaseOpacity(by: 0.010)
                                     if opacity >= 1.0 {
                                         hasFinishedPainting = true
                                         print("Opacity is 1.0")
@@ -35,7 +35,7 @@ struct ExtraFeatureView: View {
                             .simultaneously(with: TapGesture(count: 1).onEnded { _ in
                                 // Increment the tap counter
                                 tapCounter += 1
-                                if tapCounter > 6 {
+                                if tapCounter > 3 {
                                     // Show a pop-up message when more than three taps
                                     showAlert()
                                     tapCounter = 0
