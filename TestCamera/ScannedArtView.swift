@@ -19,7 +19,7 @@ struct ScannedArtView: View {
                 .fontWeight(.bold)
             Text("Artist: Leonardo da Vinci")
                 .font(.title3)
-            Text("Year: 1503-1506")
+            Text("Style: Renaissance")
                 .font(.title3)
             Text("Brush: sfumato")
                 .font(.title3)
